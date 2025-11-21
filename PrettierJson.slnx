@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="PrettierJson.csproj" />
+  <Project Path="PrettierJson.csproj">
+    <BuildType Project="Release" />
+  </Project>
 </Solution>

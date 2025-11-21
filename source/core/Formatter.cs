@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.Json;
 
-namespace PrettierJson
+namespace PrettierJson.Core
 {
     public class Formatter
     {
@@ -22,6 +22,22 @@ namespace PrettierJson
                         doc,
                         new JsonSerializerOptions { WriteIndented = true }
                     );
+            }
+            catch (JsonException ex)
+            {
+                throw new Exception($"Invalid JSON: {ex.Message}");
+            }
+        }
+
+        public static string FormatString(string json)
+        {
+            try
+            {
+                using var doc = JsonDocument.Parse(json);
+                return JsonSerializer.Serialize(
+                    doc,
+                    new JsonSerializerOptions { WriteIndented = true }
+                );
             }
             catch (JsonException ex)
             {
