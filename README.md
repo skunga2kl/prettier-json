@@ -11,6 +11,7 @@ YAML support maybe coming. Eventually. Probably.
 
 - JSON file formatting (of course)
 - Save formatted output to a new file with `--out`
+- Stdin support.
 - Colorized success/error messages
 - Written in C#
 
@@ -20,4 +21,4 @@ YAML support maybe coming. Eventually. Probably.
 
 ### Format a JSON file and print it to the console:
 ```bash
-prettierjson format file.json
+prettierjson format file.json [--out]
