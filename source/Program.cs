@@ -5,17 +5,17 @@ namespace PrettierJson;
 
 class Program
 {
-    private const string version = "0.1.0";
+    private const string version = "0.1.2";
 
     static int Main(string[] args)
     {
-        if (args.Length == 1 && (args[0] == "--version" || args[0] == "-v"))
+        if (args.Contains("--version") || args.Contains("-v"))
         {
             ConsoleHelpers.PrintVersion(version);
             return 0;
         }
 
-        if (args.Length == 1 && (args[0] == "--help" || args[0] == "-h"))
+        if (args.Contains("--help") || args.Contains("-h"))
         {
             PrintHelp();
             return 0;
@@ -35,6 +35,7 @@ class Program
             _ => UnknownCommand(command)
         };
     }
+
 
     static int UnknownCommand(string cmd)
     {
