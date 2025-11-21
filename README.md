@@ -1,9 +1,9 @@
 # prettier.json
 
-A CLI tool for formatting JSON, making them easier to read.
-Made cause i was bored.
+A tiny CLI tool for formatting JSON files to make them easier to read.  
+Made because I was bored.
 
-YAML support coming maybe.
+YAML support maybe coming. Eventually. Probably.
 
 ---
 
@@ -11,12 +11,13 @@ YAML support coming maybe.
 
 - JSON file formatting (of course)
 - Save formatted output to a new file with `--out`
+- Colorized success/error messages
 - Written in C#
 
 ---
 
 ## Usage
 
-### Format a JSON file and print to the console:
+### Format a JSON file and print it to the console:
 ```bash
 prettierjson format file.json
