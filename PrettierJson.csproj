@@ -9,6 +9,13 @@
 		<PublishSingleFile>true</PublishSingleFile>
 		<SelfContained>false</SelfContained>
 		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+
+		<ApplicationIcon>resource/icon.ico</ApplicationIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="resource\" />
+		<None Include="resource/icon.ico" />
+	</ItemGroup>
 
 </Project>
