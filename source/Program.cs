@@ -5,7 +5,7 @@ namespace PrettierJson;
 
 class Program
 {
-    private const string version = "0.1.2";
+    private const string version = "0.1.4";
 
     static int Main(string[] args)
     {
