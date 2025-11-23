@@ -21,6 +21,12 @@ class Program
             return 0;
         }
 
+        if (args.Contains("--list") || args.Contains("-l"))
+        {
+            ConsoleHelpers.ListFiles();
+            return 0;
+        }
+
         if (args.Length == 0)
         {
             PrintHelp();
@@ -59,6 +65,7 @@ class Program
         Console.WriteLine("  --out       Save formatted JSON to a file");
         Console.WriteLine("  --version   Show version");
         Console.WriteLine("  --help      Show help");
+        Console.WriteLine("  --list      List all JSON files in the current directory");
         Console.WriteLine();
         Console.ResetColor();
     }
