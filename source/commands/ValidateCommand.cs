@@ -1,5 +1,5 @@
 ﻿using PrettierJson.Utils;
-using System.Text.Json  ;
+using System.Text.Json;
 
 namespace PrettierJson.Commands
 {

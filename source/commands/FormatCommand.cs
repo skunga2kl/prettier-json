@@ -34,6 +34,15 @@ namespace PrettierJson.Commands
                 return 1;
             }
 
+            if (inputPath != null && Directory.Exists(inputPath))
+                return FormatDir(inputPath);
+
+            if (inputPath != null && !File.Exists(inputPath) && !Console.IsInputRedirected)
+            {
+                ConsoleHelpers.PrintError($"Error: '{inputPath}' does not exist.");
+                return 1;
+            }
+
             try
             {
                 string json = Console.IsInputRedirected
@@ -59,6 +68,35 @@ namespace PrettierJson.Commands
                 ConsoleHelpers.PrintError($"Error: {ex.Message}");
                 return 1;
             }
+        }
+
+        private static int FormatDir(string directory)
+        {
+            var files = Directory.GetFiles(directory, "*.json");
+
+            if (files.Length == 0)
+            {
+                ConsoleHelpers.PrintError("No JSON files found in current directory");
+                return 1;
+            }
+
+            foreach (var file in files)
+            {
+                try
+                {
+                    string json = File.ReadAllText(file);
+                    string result = Formatter.FormatString(json);
+                    File.WriteAllText(file, result);
+
+                    ConsoleHelpers.PrintSuccess($"Formatted {Path.GetFileName(file)}");
+                }
+                catch (Exception ex)
+                {
+                    ConsoleHelpers.PrintError($"Failed to format '{file}': {ex.Message}");
+                }
+            }
+
+            return 0;
         }
     }
 }
