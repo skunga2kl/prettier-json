@@ -6,7 +6,7 @@
 A tiny CLI tool for formatting JSON files to make them easier to read.  
 Made because I was bored.
 
-YAML support coming at maybe some point or something i dont really knowwwwwww
+YAML support most likely not coming.
 
 ---
 
