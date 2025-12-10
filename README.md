@@ -1,7 +1,7 @@
 # prettier.json
 
 ### this project is basically stable now. no big features coming anymore, just bugfixes and maybe YAML support if i feel like it.
-### also, i’m starting a new cargo-helper-ish Rust project soon, so keep an eye out.
+### also, i’m making other pretty nice projects at the moment, so yea.
 
 A tiny CLI tool for formatting JSON files to make them easier to read.  
 Made because I was bored.
